@@ -1,0 +1,81 @@
+\apendice{Plan de Proyecto Software}
+
+\section{Introducción}
+Dentro de este apartado se van a tratar dos puntos a cerca del proyecto:
+\begin{itemize}
+    \item La Planificación que se ha llevado.
+    \item La Viabilidad del mismo.
+\end{itemize}
+\section{Planificación temporal}
+Para llevar a cabo el proyecto se ha seguido la metodología de trabajo \emph{Scrum}, dónde cada semana se llevaba a cabo un \emph{sprnt} distinto. En cada uno de estos \emph{sprints} se consensuaban unos objetivos y tareas a llevar a cabo para la siguiente semana.
+
+En situaciones especiales las reuniones se podrían atrasar una semanas con el fin de desempeñar correctamente los objetivos marcados.
+
+Para poder reflejar el trabajo que se iba realizando semana tras semana se utilizó la plataforma de \emph{GitHub} cuyo repositorio del proyecto es \url{https://github.com/ifh1001/TFG_X-Teeth}.
+
+\subsection{Sprint 1 - 02/02/2022}
+En este primer \emph{sprint} se basó principalmente en la explicación por parte de mis tutores sobre el trabajo a realizar en el TFG X-Teeth. Además, se concretó la fecha de las reuniones de cada \emph{sprint}, siendo esta los viernes a las 11:30 de la mañana a través de \emph{Microsoft Teams}.
+
+Como primeras tareas a realizar fueron:
+\begin{itemize}
+    \item Crear cuenta en \emph{Overleaf}, para realizar la documentación con \emph{Latex}.
+    \item Crear el repositorio en \emph{GitHub}.
+    \item Leer diversos artículos sobre el \emph{Deep Learning} en la rama de la odontología.
+    \item Buscar información a cerca de la librería de \emph{Keras}, ya que se pensó que podría ser una solución para llevar a cabo el proyecto.
+\end{itemize}
+\subsection{Sprint 2 - 11/02/2022}
+En esta segunda reunión se habló sobre los pocos casos de dientes que había para poder trabajar y que mi tutor José Miguel había estado desarrollando un \emph{notebook} para poder rotar las diversas imágenes que teníamos y así poder trabajar con más casos distintos. 
+
+También, debido a este problema de tener pocos casos, se decidió usar \emph{Detectron2}, ya que es una librería de \emph{Python} que permite detectar objetos con muy pocos casos.
+Como resultado de esta reunión las tareas a desarrollar para la siguiente semana fueron:
+\begin{itemize}
+    \item Terminar el \emph{notebook} de mi tutor.
+    \item Intentar instalar \emph{Detectron2} en mi ordenador.
+\end{itemize}
+\subsection{Sprint 3 - 18/02/2022}
+Para este \emph{sprint} solo puede terminar el \emph{notebook}, ya que la parte de instalación de \emph{Detectron2} me resultó imposible, debido a que no existe una versión oficial para trabajar con Windows 10 y generalmente surgen incompatibilidades entre varios paquetes en este sistema operativo. Como resultado de esto, la única tarea a realizar para el siguiente \emph{sprint} fue seguir intentando instalar \emph{Detectron2}.
+\subsection{Sprint 4 - 23/02/2022}
+Esta reunión fue distinta a las anteriores, ya que inicialmente mantuvimos una charla con el dentista que da origen a este proyecto. Se le comentó que había un error en algunos de los casos que nos había pasado y se acordó que nos pasaría un total de 150 radiografías para poder trabajar correctamente con \emph{Detectron2}.
+
+La segunda parte de la reunión fue ya sin el dentista, en la cuál comenté que no conseguí instalar \emph{Detectron2}. Debido a esta situación, se decidió trabajar por el momento con \emph{Google Colab}, ya que era muy sencillo usar la librería de detección de objetos, y en el futuro utilizar alguna de las máquinas que dispone la Universidad de Burgos, como Gamma o Beta. 
+
+Las tareas resultantes este \emph{sprint} fueron:
+\begin{itemize}
+    \item Aprender a usar \emph{Detectron2} en \emph{Google Colab} .
+    \item Crear una función que transformara los archivos json del dentista a la forma COCO que necesita \emph{Detectron2} para poder trabajar.
+\end{itemize}
+\subsection{Sprint 5 - 04/02/2022}
+Para este \emph{sprint} al haber realizado con éxito la segunda tarea de la reunión pasada creé el primer sistema entrenador de \emph{Detectron2}, dónde, pese a trabajar con tan solo 10 imágenes (7 para entrenar y 3 para testear) se obtuvieron unos resultados bastantes buenos en la parte de detección del diente y regulares en la parte del nervio.
+
+Tras obtener estos resultados tan esperanzadores, las siguientes tareas a realizar fueron:
+\begin{itemize}
+    \item Aplicar la técnica  \emph{Convex Hull} a las imágenes rotadas obtenidas por el  \emph{notebook} terminado del  \emph{sprint} 2, con el fin de obtener los puntos de la máscara y crear los json correspondientes y poder trabajar con más casos.
+    \item Aplicar la técnica IoU (\emph{Intersection over Union}), para comprobar si las predicciones del \emph{Detectron2} están siendo buenas.
+\end{itemize}
+\subsection{Sprint 6 - 11/02/2022}
+Los resultados obtenidos por el \emph{Convex Hull} no fueron los correctos, ya que esta técnica no funciona correctamente en las zonas curvas de los dientes y nervios.
+
+Además, detecte un problema en el \emph{notebook} del \emph{sprint} 2, ya que las máscaras de los dientes y nervios no se encontraban en el tamaño correcto con respecto a la imagen de la radiografía correspondiente.
+
+Por último, se creyó conveniente aplicar otra estrategia con el \emph{Detectron2}, ya inicialmente teníamos un modelo para entrenar a la vez dientes y nervios, por lo que se pensó que con la siguiente estrategia se conseguirían mejores resultados:
+\begin{enumerate}
+    \item Crear un modelo que solo entrenara dientes.
+    \item Obtener las predicciones de los dientes.
+    \item Recortar la caja que contenía el diente de la predicción.
+    \item Crear un modelo que solo entrenara nervios.
+    \item Obtener las predicciones de los nervios.
+\end{enumerate}
+Por tanto, para el siguiente \emph{sprint} tendría que realizar las siguientes tareas:
+\begin{itemize}
+    \item Buscar una técnica que realice correctamente la detección de los puntos de las máscaras de los dientes y nervios.
+    \item Solucionar el problema de tamaños entre las máscaras y la radiografía.
+    \item Llevar a cabo la nueva estrategia del \emph{Detectron2}.
+    \item Mostrar una gráfica con la pérdida total durante el entrenamiento con el fin de ver a partir de que iteración se produce un \emph{overtraining}.
+\end{itemize}
+\section{Estudio de viabilidad}
+
+\subsection{Viabilidad económica}
+
+\subsection{Viabilidad legal}
+
+
