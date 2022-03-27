@@ -44,15 +44,15 @@ Las tareas resultantes este \emph{sprint} fueron:
     \item Aprender a usar \emph{Detectron2} en \emph{Google Colab} .
     \item Crear una función que transformara los archivos json del dentista a la forma COCO que necesita \emph{Detectron2} para poder trabajar.
 \end{itemize}
-\subsection{Sprint 5 - 04/02/2022}
-Para este \emph{sprint} al haber realizado con éxito la segunda tarea de la reunión pasada creé el primer sistema entrenador de \emph{Detectron2}, dónde, pese a trabajar con tan solo 10 imágenes (7 para entrenar y 3 para testear) se obtuvieron unos resultados bastantes buenos en la parte de detección del diente y regulares en la parte del nervio.
+\subsection{Sprint 5 - 04/03/2022}
+Para este \emph{sprint} tras haber realizado con éxito la segunda tarea de la reunión pasada creé el primer sistema entrenador de \emph{Detectron2}, dónde, pese a trabajar con tan solo 10 imágenes (7 para entrenar y 3 para testear) se obtuvieron unos resultados bastantes buenos en la parte de detección del diente y regulares en la parte del nervio.
 
 Tras obtener estos resultados tan esperanzadores, las siguientes tareas a realizar fueron:
 \begin{itemize}
     \item Aplicar la técnica  \emph{Convex Hull} a las imágenes rotadas obtenidas por el  \emph{notebook} terminado del  \emph{sprint} 2, con el fin de obtener los puntos de la máscara y crear los json correspondientes y poder trabajar con más casos.
     \item Aplicar la técnica IoU (\emph{Intersection over Union}), para comprobar si las predicciones del \emph{Detectron2} están siendo buenas.
 \end{itemize}
-\subsection{Sprint 6 - 11/02/2022}
+\subsection{Sprint 6 - 11/03/2022}
 Los resultados obtenidos por el \emph{Convex Hull} no fueron los correctos, ya que esta técnica no funciona correctamente en las zonas curvas de los dientes y nervios.
 
 Además, detecte un problema en el \emph{notebook} del \emph{sprint} 2, ya que las máscaras de los dientes y nervios no se encontraban en el tamaño correcto con respecto a la imagen de la radiografía correspondiente.
@@ -70,7 +70,19 @@ Por tanto, para el siguiente \emph{sprint} tendría que realizar las siguientes 
     \item Buscar una técnica que realice correctamente la detección de los puntos de las máscaras de los dientes y nervios.
     \item Solucionar el problema de tamaños entre las máscaras y la radiografía.
     \item Llevar a cabo la nueva estrategia del \emph{Detectron2}.
-    \item Mostrar una gráfica con la pérdida total durante el entrenamiento con el fin de ver a partir de que iteración se produce un \emph{overtraining}.
+    \item Mostrar una gráfica con la pérdida total durante el entrenamiento con el fin de ver a partir de que iteración se produce un \emph{overfitting}.
+\end{itemize}
+\subsection{Sprint 7 - 25/03/2022}
+En el anterior \emph{sprint} se completaron con éxito todas las tareas, pese a ello, la técnica aplicada para detectar los bordes gracias a la librería CV2 de \emph{Python} obtuvo unos buenos resultados aunque no del todo precisos.
+
+Por tanto, sería útil buscar alguna otra alternativa con el fin de ver si se pueden conseguir una mayor precisión en la detección de los puntos de los bordes de las máscaras.
+
+Como resultado de esta reunión, las tareas a realizar para la siguiente semana son:
+\begin{itemize}
+    \item Buscar alguna alternativa en la detección de bordes, con el fin de conseguir mejores resultados.
+    \item Entrenar \emph{Detectron2} con las radiografías originales y no con las que tienen el diente resaltado, ya que seguramente se estén consiguiendo buenos resultados gracias a la ``ayuda'' que dispone en las imágenes.
+    \item Buscar información a cerca de la convención PEP8, y empezar a aplicarlo, con el fin de conseguir un código mas limpio.
+    \item Añadir un límite en la parte de validación para que una vez se encuentre el punto en el que se produce el \emph{overfitting} no siga entrenando.  
 \end{itemize}
 \section{Estudio de viabilidad}
 
