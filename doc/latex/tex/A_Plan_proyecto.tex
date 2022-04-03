@@ -84,6 +84,16 @@ Como resultado de esta reunión, las tareas a realizar para la siguiente semana 
     \item Buscar información a cerca de la convención PEP8, y empezar a aplicarlo, con el fin de conseguir un código mas limpio.
     \item Añadir un límite en la parte de validación para que una vez se encuentre el punto en el que se produce el \emph{overfitting} no siga entrenando.  
 \end{itemize}
+\subsection{Sprint 8 - 01/04/2022}
+En esta semana se ha conseguido mejorar la forma de obtener los puntos de las máscaras de los dientes y nervios, para poder trabajar correctamente con ellas. 
+
+Esto se ha conseguido juntando dos librerías: inicialmente se usa Skimage para obtener únicamente el borde de cada una de las máscaras y, a continuación, se utiliza CV2 para conseguir todos los puntos que dan lugar a ese borde. De esta forma se consigue una precisión mucho mayor que aplicando únicamente CV2 sobre las imágenes.
+
+Las próximas tareas a realizar son:
+\begin{itemize}
+    \item Instalar \emph{Detectron2} en la máquina de la Universidad de Burgos, Gamma, para poder trabajar en ella.
+    \item Automatizar el proceso de repartición del conjunto de datos de forma que el 60\% sea de entrenamiento, un 20\% para test y el último 20\% para validación. 
+\end{itemize}
 \section{Estudio de viabilidad}
 
 \subsection{Viabilidad económica}
