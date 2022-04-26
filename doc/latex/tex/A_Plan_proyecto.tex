@@ -94,6 +94,17 @@ Las próximas tareas a realizar son:
     \item Instalar \emph{Detectron2} en la máquina de la Universidad de Burgos, Gamma, para poder trabajar en ella.
     \item Automatizar el proceso de repartición del conjunto de datos de forma que el 60\% sea de entrenamiento, un 20\% para test y el último 20\% para validación. 
 \end{itemize}
+\subsection{Sprint 9 - 22/04/2022}
+Para este \emph{sprint} no se consiguió instalar \emph{Detectron2} en la máquina Gamma debido a alguna incompatibilidad entre versiones. Pese a ello se siguió trabajando en \emph{Google Colab}, y se crearon las funciones necesarias para poder distribuir las imágenes de manera aleatoria entre el entrenamiento, validación y test. 
+
+Adicionalmente, se añadió de forma correcta el cálculo de la precisión de las predicciones a través del IoU ya mencionado anteriormente. Dicho valor se calculó tanto en el \emph{notebook} de dos modelos entrenadores cómo en el de un modelo entrenador, con el fin de ver cual de ellos muestra mejores resultados, que por el momento es el segundo.
+
+Por último, se mejoró el código en uno de los \emph{notebook} para facilitar la comprensión del mismo a través del estándar PEP8.
+
+La tarea a realizar para la próxima semana es:
+\begin{itemize}
+    \item Conseguir instalar \emph{Detectron2} en Gamma mediante versiones más antiguas de los paquete con el fin de evitar incompatibilidades.
+\end{itemize}
 \section{Estudio de viabilidad}
 
 \subsection{Viabilidad económica}
