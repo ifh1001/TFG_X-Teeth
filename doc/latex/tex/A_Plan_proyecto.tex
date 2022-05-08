@@ -87,7 +87,7 @@ Como resultado de esta reunión, las tareas a realizar para la siguiente semana 
 \subsection{Sprint 8 - 01/04/2022}
 En esta semana se ha conseguido mejorar la forma de obtener los puntos de las máscaras de los dientes y nervios, para poder trabajar correctamente con ellas. 
 
-Esto se ha conseguido juntando dos librerías: inicialmente se usa Skimage para obtener únicamente el borde de cada una de las máscaras y, a continuación, se utiliza CV2 para conseguir todos los puntos que dan lugar a ese borde. De esta forma se consigue una precisión mucho mayor que aplicando únicamente CV2 sobre las imágenes.
+Esto se ha conseguido juntando dos librerías: inicialmente se usa \emph{Skimage} para obtener únicamente el borde de cada una de las máscaras y, a continuación, se utiliza CV2 para conseguir todos los puntos que dan lugar a ese borde. De esta forma se consigue una precisión mucho mayor que aplicando únicamente CV2 sobre las imágenes.
 
 Las próximas tareas a realizar son:
 \begin{itemize}
@@ -113,7 +113,19 @@ Se han instalado la versiones 10.1 de \emph{CUDA Toolkit} y la versión 1.4 de \
 Las dos tareas próximas a realizar son:
 \begin{itemize}
     \item Implementar de forma correcta el método para poder medir el tamaño del nervio del diente de la imagen.
-    \item Investigar las distintas GUI de Python para elegir una de ellas y poder montar la aplicación final.  
+    \item Investigar las distintas GUI de \emph{Python} para elegir una de ellas y poder montar la aplicación final.  
+\end{itemize}
+\subsection{Sprint 11 - 06/05/2022}
+Para este \emph{sprint} se ha implementado una técnica que permite calcular la longitud del nervio. Dicha técnica se basa en obtener la distancia máxima entre el nervio y el diente. Pese a que se ha conseguido que funcione correctamente estamos a la espera del dentista para poder transformar la distancia en píxeles a una longitud real y poder analizar los resultados que da.
+
+La segunda técnica que se quería implementar se basaba en usar \emph{Skeletonize} de la librería \emph{Skimage}. Dicha técnica no se ha implementado de forma correcta y, por tanto, aún no se sabe si puede dar buenos resultados.
+
+Con respecto a las GUI de \emph{Python}, tras analizar varias he decidido quedarme con \emph{EasyGUI} y con \emph{PySimpleGUI}. Y una vez haya probado ambas quedarme con una de ellas.
+
+Por tanto, las tareas a realizar para la semana que viene son:
+\begin{itemize}
+    \item Corregir el uso de \emph{Skeletonize} para que funcione correctamente y ver que resultados da.
+    \item Instalar \emph{EasyGui} y \emph{PySimpleGui} en el entorno de \emph{conda} de Gamma para ver que funcionen correctamente y seleccionar la mejor.
 \end{itemize}
 \section{Estudio de viabilidad}
 
