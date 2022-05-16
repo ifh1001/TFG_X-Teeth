@@ -127,6 +127,19 @@ Por tanto, las tareas a realizar para la semana que viene son:
     \item Corregir el uso de \emph{Skeletonize} para que funcione correctamente y ver que resultados da.
     \item Instalar \emph{EasyGui} y \emph{PySimpleGui} en el entorno de \emph{conda} de Gamma para ver que funcionen correctamente y seleccionar la mejor.
 \end{itemize}
+\subsection{Sprint 12 - 13/05/2022}
+Para esta reunión han ocurrido dos hechos importantes. El primero es que a mitad del \emph{sprint} anterior el odontólogo que da origen a este proyecto había cambiado de idea. Inicialmente, lo principal era obtener la medida del nervio, pero ahora el odontólogo quiere la longitud del diente.
+
+El segundo hecho importante, ha sido que el propio odontólogo ha asistido a la reunión para ver los resultados que se están consiguiendo. También, nos comentó el proceso que realiza para poder medir el tamaño del diente y al mostrarle las técnicas que utilizamos para calcular la longitud nos indicó que la correcta sería la que mide el diente por los puntos centrales.
+
+Como última cosa a comentar sería la imposibilidad de poder ejecutar un GUI desde el \emph{notebook} en Gamma, debido a que al ser un servidor no tiene ningún \emph{display}
+asignado. Por ello, la aplicación final se realizará en un \emph{notebook}.
+
+Las próximas tareas a realizar son:
+\begin{itemize}
+    \item Investigar y probar \emph{ipywidgets} con el fin de poder tener una pequeña interfaz dentro del \emph{notebook} que contendrá la aplicación final.
+    \item Para poder medir la longitud del diente por la parte central, se ha pensado en utilizar \emph{Skeletonize} sobre el nervio y a la lineal central obtenida alargarla hasta el diente, para posteriormente calcular su longitud.
+\end{itemize}
 \section{Estudio de viabilidad}
 
 \subsection{Viabilidad económica}
