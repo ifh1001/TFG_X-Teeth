@@ -152,6 +152,18 @@ Las tareas a realizar para la próxima semana son:
     \item Investigar porque los resultados obtenidos no son los esperados, ya que el proceso de segmentación es bastante bueno.
     \item Desarrollar la aplicación final con las distintas funcionalidades de \emph{ipywidgets}.
 \end{itemize}
+\subsection{Sprint 14 - 27/05/2022}
+Para esta semana se ha conseguido desarrollar una simple aplicación que permita subir al odontólogo una radiografía y que le presente los resultados obtenidos. Actualmente, la aplicación muestra la radiografía junto con la recta correspondiente a la longitud del diente y un cuadro de texto con el tamaño del mismo.
+
+Con respecto a los errores que se estaban obteniendo a la hora de calcular la longitud de los dientes, tras analizar los métodos implementados y la segmentación de dientes y nervios por parte de \emph{Detectron2}, se ha llegado a la conclusión de que el problema probablemente venga dado o por la resolución que nos pasó el odontólogo o por los tamaños de los dientes que nos indicó en las distintas radiografías.
+
+Para la siguiente semana las tareas a realizar son:
+\begin{itemize}
+    \item Permitir subir en la aplicación varias radiografías a la vez y mostrar para cada una de ellas los resultados obtenidos.
+    \item En la aplicación, mostrar la segmentación del diente y el nervio obtenida en cada caso.
+    \item Probar a exportar el modelo obtenido del \emph{Detectron2} a un \emph{notebook} en \emph{Google Colab} con el fin de facilitar las conexiones a la aplicación.
+    \item En caso de que la tarea anterior no se pueda efectuar, usar \emph{tmux} junto con \emph{ngrok} para permitir conexiones al \emph{notebook} que tiene la aplicación en Gamma.
+\end{itemize}
 \section{Estudio de viabilidad}
 
 \subsection{Viabilidad económica}
