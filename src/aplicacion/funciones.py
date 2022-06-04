@@ -15,8 +15,18 @@ from PIL import Image
 from detectron2.engine import DefaultPredictor
 from detectron2.config import get_cfg
 from detectron2 import model_zoo
+from detectron2.utils.visualizer import Visualizer, ColorMode
 from skimage.morphology import thin
 
+
+# -- Clases --
+class Predictor(object):
+    __instancia = None
+    
+    def __new__(cls):
+        if Predictor.__instancia is None:
+            Predictor.__instancia = obtiene_predictor()
+        return Predictor.__instancia 
 
 # -- Funciones --
 
@@ -26,26 +36,15 @@ from skimage.morphology import thin
 # Parámetros:
 #  - uploader: elemento que contendrá la imagen con la que se quiere trabajar.
 def aplicacion(uploader):
-    imagen = carga_imagen(uploader)
-    predictor = obtiene_predictor()
-    puntoA, puntoB, distancia = calcula_distancia(imagen, predictor)
-    muestra_imagenes(imagen, puntoA, puntoB)
-    muestra_distancia(distancia)
-
-
-# Método encargado de transformar la imágen cargado en cadena de bytes a forma
-# matricial.
-#
-# Parámetros:
-#  - uploader: elemento que contendrá la imagen en cadena de bytes.
-# Return:
-#  - img: imagen cargada en forma ed matriz.
-def carga_imagen(uploader):
+    predictor = Predictor()
     for name, file_info in uploader.value.items():
+        print(name)
         imagen_bytes = Image.open(io.BytesIO(file_info['content']))
-        img = cv2.cvtColor(np.array(imagen_bytes), cv2.COLOR_RGB2BGR)
-
-    return img
+        imagen = cv2.cvtColor(np.array(imagen_bytes), cv2.COLOR_RGB2BGR)
+        
+        puntoA, puntoB, distancia, im_predicc = calcula_distancia(imagen, predictor)
+        muestra_imagenes(imagen, im_predicc, puntoA, puntoB)
+        muestra_distancia(distancia)
 
 
 # Método encargado de cargar y devolver el predictor.
@@ -116,8 +115,14 @@ def calcula_distancia(imagen, predictor):
     xx = ((puntoA[1] - puntoB[1]) * resolucion_x) ** 2
     yy = ((puntoA[0] - puntoB[0]) * resolucion_y) ** 2
     distancia = (xx + yy) ** 0.5
-
-    return puntoA, puntoB, distancia
+    
+    #Preparamos imagen con las predicciones
+    v = Visualizer(imagen[:, :, ::-1],
+                   scale=1,
+                   instance_mode=ColorMode.IMAGE_BW)
+    
+    im_predicc = v.draw_instance_predictions(predicciones["instances"].to("cpu"))
+    return puntoA, puntoB, distancia, im_predicc
 
 
 # Método encargado de ordenar las predicciones.
@@ -183,7 +188,7 @@ def punto_correcto(diente, punto1, punto2, y, superior=True):
         else:
             y = y - 1
 
-        x = calcula_punto_recta(punto1, punto2, y)
+        x = calcula_punto_recta(punto1, punto2, y)    
 
     return y, int(x)
 
@@ -195,14 +200,20 @@ def punto_correcto(diente, punto1, punto2, y, superior=True):
 #  - imagen: imagen con la que se quiere trabajar.
 #  - puntoA: primer punto de la recta.
 #  - puntoB: segundo punto de la recta.
-def muestra_imagenes(imagen, puntoA, puntoB):
+def muestra_imagenes(imagen, im_predicc, puntoA, puntoB):
     fig = plt.figure()
-    fig.add_subplot(1, 2, 1)
+    fig.set_size_inches(14, 22)
+    fig.add_subplot(1, 3, 1)
     plt.title("Radiografía")
     plt.imshow(imagen)
     plt.axis('off')
-
-    fig.add_subplot(1, 2, 2)
+    
+    fig.add_subplot(1, 3, 2)
+    plt.title("Segmentación")
+    plt.imshow(im_predicc.get_image()[:, :, ::-1])
+    plt.axis('off')
+    
+    fig.add_subplot(1, 3, 3)
     plt.title("Radiografía con Recta")
     plt.imshow(imagen)
     plt.plot([puntoA[1], puntoB[1]], [puntoA[0], puntoB[0]], color='r')
@@ -217,5 +228,5 @@ def muestra_imagenes(imagen, puntoA, puntoB):
 #  - distancia: distancia que se quiere mostrar.
 def muestra_distancia(distancia):
     distancia = round(distancia, 1)
-    w = widgets.Text(value='La distancia es: ' + str(distancia) + 'mm', disabled=True)
+    w = widgets.Text(value='La longitud del diente es: ' + str(distancia) + 'mm', disabled=True)
     display(w)
