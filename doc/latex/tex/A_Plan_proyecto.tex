@@ -164,6 +164,19 @@ Para la siguiente semana las tareas a realizar son:
     \item Probar a exportar el modelo obtenido del \emph{Detectron2} a un \emph{notebook} en \emph{Google Colab} con el fin de facilitar las conexiones a la aplicación.
     \item En caso de que la tarea anterior no se pueda efectuar, usar \emph{tmux} junto con \emph{ngrok} para permitir conexiones al \emph{notebook} que tiene la aplicación en Gamma.
 \end{itemize}
+\subsection{Sprint 15 - 03/06/2022}
+Para esa semana se han conseguido implementar las distintas mejoras de la aplicación final. 
+
+Con respecto al modelo, al ser un archivo pesado de unos 330 MB aproximadamente, hay problemas a la hora de subirlo tanto a \emph{Google Colab} como a \emph{GitHub}. Por ello, no se ha podido probar si el modelo funcionará en la aplicación subida a \emph{Google Colab}.
+
+Por último, mencionar que el dentista nos ha indicado que la última técnica que usamos para medir la longitud de los dientes no es la correcta en aquellos casos donde el nervio tenga una cierta curvatura. Por tanto, hay que implementar una cuarta técnica que mida la longitud del diente a través del nervio, calculando las longitudes en pequeñas porciones para poder medir correctamente las zonas curvas de los dientes.
+
+\begin{itemize}
+    \item Buscar si existe algún \emph{widget} que permita hacer zum a las imágenes, para poder observar mejor los resultados obtenidos en la aplicación.
+    \item Con el fin de dar más \emph{feedback} al usuario en la aplicación a la hora de cargar las imágenes, mostrar un mensaje con las distintas imágenes cargadas.
+    \item Usar alguna técnica que permita dividir el modelo en pequeños archivos para poder trabajar con ello de forma cómoda.
+    \item Implementar la nueva técnica de cálculo de longitud del diente mencionada anteriormente.
+\end{itemize}
 \section{Estudio de viabilidad}
 
 \subsection{Viabilidad económica}
