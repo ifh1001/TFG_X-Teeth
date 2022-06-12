@@ -171,11 +171,30 @@ Con respecto al modelo, al ser un archivo pesado de unos 330 MB aproximadamente,
 
 Por último, mencionar que el dentista nos ha indicado que la última técnica que usamos para medir la longitud de los dientes no es la correcta en aquellos casos donde el nervio tenga una cierta curvatura. Por tanto, hay que implementar una cuarta técnica que mida la longitud del diente a través del nervio, calculando las longitudes en pequeñas porciones para poder medir correctamente las zonas curvas de los dientes.
 
+Las próximas tareas a realizar son:
 \begin{itemize}
     \item Buscar si existe algún \emph{widget} que permita hacer zum a las imágenes, para poder observar mejor los resultados obtenidos en la aplicación.
     \item Con el fin de dar más \emph{feedback} al usuario en la aplicación a la hora de cargar las imágenes, mostrar un mensaje con las distintas imágenes cargadas.
     \item Usar alguna técnica que permita dividir el modelo en pequeños archivos para poder trabajar con ello de forma cómoda.
     \item Implementar la nueva técnica de cálculo de longitud del diente mencionada anteriormente.
+\end{itemize}
+\subsection{Sprint 16 - 10/06/2022}
+Para este \emph{sprint} se ha buscado algún \emph{widget} que permita hacer zum a las imágenes en los resultados de la aplicación, pero no se ha encontrado nada útil. También, se ha añadido que cada vez que se cargue una imagen se muestre un mensaje con el nombre de todas las imágenes cargadas.
+
+Con respecto a la técnica a implementar, se ha desarrollado correctamente. Pero la parte de buscar la distancia máxima desde el extremo del nervio hasta el diente no es lo correcto, por lo que se realizará de igual forma que la técnica anterior, alargar como si fuera una línea recta hasta el borde del diente.
+
+Por otro lado, con respecto a dividir el modelo para poder subirlo a \emph{Google Colab} y a \emph{GitHub}, se ha encontrado una forma más sencilla. Dicho modo se basa en tener el modelo subido en \emph{Google Drive} y gracias al paquete \emph{gdown} descargarlo.
+
+Tras poder subirlo a \emph{Google Colab}, se ha corroborado que se puede utilizar el modelo obtenido en Gamma en los \emph{notebooks} de \emph{Google}.
+
+Por último, la aplicación en Gamma se ha lanzado también con \emph{ngrok}, de manera que, actualmente, se puede acceder a la aplicación a través de un enlace. Pese a ello, también se va a realizar la aplicación en \emph{Google Colab}, de modo que haya dos alternativas para poder usarla.
+
+Por tanto, las tareas a hacer para la semana que viene son:
+\begin{itemize}
+    \item Corregir el problema de la cuarta técnica implementada para calcular la longitud del diente.
+    \item Una vez esté corregido el problema de la tarea anterior, actualizar la aplicación para que trabaje con dicha estrategia para calcular la longitud deseada.
+    \item Implementar la aplicación en \emph{Google Colab}.
+    \item Comentar las diversas celdas de los diferentes \emph{notebooks} para facilitar su comprensión. 
 \end{itemize}
 \section{Estudio de viabilidad}
 
