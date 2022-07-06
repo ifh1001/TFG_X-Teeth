@@ -1,6 +1,115 @@
 \capitulo{4}{Técnicas y herramientas}
 
-Esta parte de la memoria tiene como objetivo presentar las técnicas metodológicas y las herramientas de desarrollo que se han utilizado para llevar a cabo el proyecto. Si se han estudiado diferentes alternativas de metodologías, herramientas, bibliotecas se puede hacer un resumen de los aspectos más destacados de cada alternativa, incluyendo comparativas entre las distintas opciones y una justificación de las elecciones realizadas. 
-No se pretende que este apartado se convierta en un capítulo de un libro dedicado a cada una de las alternativas, sino comentar los aspectos más destacados de cada opción, con un repaso somero a los fundamentos esenciales y referencias bibliográficas para que el lector pueda ampliar su conocimiento sobre el tema.
+En este punto de la memoria se habla de las diferentes herramientas y técnicas utilizadas a lo largo del proyecto.
+
+\section{Metodología}
+A la hora de llevar a cabo el proyecto se ha seguido la metodología ágil del \emph{Scrum}. Dicha metodología busca realizar tareas incrementales para cada reunión, denominado \emph{sprint}. Los \emph{sprints} tenían una duración de una semana, aunque en algunas situaciones especiales se han alargado o disminuido la duración de los mismos.
+
+Para cada reunión se revisaban las tareas indicadas a llevar a cabo para ese \emph{sprint}, además, se hablaba de las siguientes tareas a realizar.
+
+\section{Gestión del Proyecto}
+\subsection{GitHub}
+\emph{GitHub}\footnote{GitHub: \url{https://github.com/}} es un servicio web que permite almacenar el repositorio de un proyecto, e ir actualizándolo con las nuevas versiones, de forma que se queda registrado el progreso incremental que se ha ido llevando a cabo.
+
+\subsection{Visual Studio Code}
+Con el fin de poder subir los avances del proyecto a \emph{GitHub}, se ha usado \emph{Visual Studio Code} que es un editor de código el cual permite sincronizarse a un repositorio propio de \emph{GitHub} e ir subiendo las distintas versiones.
+
+En mi caso he utilizado su versión \emph{online}\footnote{ Visual Studio Code Online: \url{https://vscode.dev/}}, ya que permite utilizar la aplicación sin la necesidad de instalar nada.
+
+\section{Herramientas}
+\subsection{Anaconda}
+\emph{Anaconda}\footnote{Anaconda: \url{https://www.anaconda.com/}} es una distribución libre de \emph{Python} empleada principalmente en ciencia de datos y \emph{deep learning}. Además, permite crear varios entornos con distintos paquetes y versiones, donde la instalación de los mismos se realiza de una forma muy sencilla.
+
+\subsection{Google Colab}
+\emph{Google Colab}\footnote{Google Colab: \url{https://colab.research.google.com/}} es un editor de \emph{Python} en el navegador web, de manera que se pueda escribir y ejecutar el código de los diversos \emph{notebook} del usuario. 
+
+Se ha usado varias veces a lo largo del proyecto, sobre todo al principio, cuando no se tenía instalado \emph{Detectron2}, debido a la facilidad de instalar paquetes en el propio \emph{Colab}.
+
+Además, la aplicación final se puede utilizar en \emph{Google Colab}, debido a la facilidad que tiene para que otros usuarios puedan usar tus \emph{notebook}.
+
+Todo ello es mediante la suscripción gratuita, la cual incluye unos 12 GB de RAM y unos 80 GB de disco. Además, todas las ejecuciones son en los servidores de \emph{Google}.
+
+\subsection{Jupyter Notebook}
+\emph{Jupyter Notebook}\footnote{Jupyter Notebook: \url{https://jupyter.org/}} es un entorno web que permite generar diversos \emph{notebook} donde poder ejecutar tu propio código. 
+
+Cada \emph{notebook} está formado por celdas, las cuales pueden tener diverso código y mostrar cada una de ellas el resultado de su ejecución. Uno de sus principales beneficios es que permite pasar los \emph{notebooks} a otras personas y que puedan ver los resultados de la ejecución.
+
+\subsection{Ngrok}
+\emph{Ngrok}\footnote{Ngrok: \url{https://ngrok.com/}} es una herramienta que nos permite lanzar un servidor local en un dominio de Internet, de forma que se pueda acceder al mismo fuera de la misma LAN. 
+
+Su uso ha sido para poder lanzar la aplicación de \emph{Jupyter Notebook} en Gamma a un dominio de Internet que permita a los usuarios conectarse y poder usarla.
+
+\subsection{Tmux}
+\emph{Tmux}\footnote{Tmux: \url{https://github.com/tmux/tmux}} es un multiplexor de terminal, es decir, permite al usuario tener varias sesiones abiertas en la terminal de manera independiente, de modo que ninguna de ellas finalizará hasta que el usuario lo desee. 
+
+La aplicación principal de esta herramienta ha sido la de mantener siempre activo el proceso de \emph{Jupyter Notebook} y \emph{Ngrok}, para que la aplicación tenga un dominio web siempre activo.
+
+\subsection{PuTTY}
+\emph{PuTTY}\footnote{PuTTY: \url{https://www.putty.org/}} es un cliente SSH con licencia gratuita que permite conectarse a servidores, iniciando sesiones en ellos, de forma remota. 
+
+En el proyecto se ha utilizado para poder conectarse a Gamma desde un ordenador con \emph{Windows 10}, ya que este sistema operativo necesita de una aplicación externa para usar el cliente SSH. 
+
+\section{Bibliotecas de Python}
+Para todo el proyecto se ha usado el lenguaje de programación \emph{Python}. Las bibliotecas utilizadas a lo largo de todo el proyecto han sido:
+
+\subsection{NumPy}
+\emph{NumPy}\footnote{NumPy: \url{https://numpy.org/}} permite crear vectores y matrices de grandes dimensiones con los que se puede usar un gran número de operaciones matemáticas.
+
+\subsection{IO}
+La biblioteca \emph{IO} permite leer y escribir en los archivos del sistema. Además, permite controlar los permisos de solo lectura, escritura o ambas.
+
+\subsection{OS}
+La biblioteca \emph{OS} permite utilizar las distintas funcionalidades del sistema operativo. En este proyecto se usa principalmente para dirigirse a las distintas rutas donde se encuentran los archivos. 
+
+\subsection{OpenCV}
+\emph{OpenCV}\footnote{OpenCV: \url{https://opencv.org/}}, también conocido como CV2, es una biblioteca centrada en la visión artificial en la parte de reconocimiento facial y de objetos. Será esta última el uso principal de dicha biblioteca.
+
+\subsection{Matplotlib}
+\emph{Matplotlib}\footnote{Matplotlib: \url{https://matplotlib.org/}} se emplea principalmente para mostrar visualizaciones estáticas, animadas e interactivas en \emph{Python}. Sus principales usos son los de crear gráficos en dos dimensiones o la de dibujar elementos sobre imágenes, siendo este último el uso principal de la biblioteca en el proyecto. 
+
+\subsection{Jupyter Widgets}
+\emph{Jupyter Widgets} permite añadir cierta interacción a los \emph{notebooks}. Se pueden añadir diferentes widgets de todo tipo por todas las celdas, consiguiendo que el \emph{notebook} sea mucho más atractivo y dinámico.
+
+\subsection{PIL}
+\emph{PIL}\footnote{PIL: \url{https://pypi.org/}} se dedica principalmente a la edición de imágenes con \emph{Python}. Además, soporta los formatos más utilizados en multimedia.
+
+\subsection{Detectron2}
+\emph{Detectron2}\footnote{Detectron2: \url{https://github.com/facebookresearch/detectron2}} es una biblioteca gratuita desarrollada por \emph{Facebook AI} y que se centra en la detección de objetos. Es capaz de etiquetar varios objetos dentro de una sola imagen, además de permitir a los usuarios crear sus propios modelos. 
+
+Para la parte de detección de elementos a través de un modelo utiliza redes neuronales del tipo \emph{Mask R-CNN}, las cuales ya se han explicado en el apartado \ref{mask}.
+
+\subsection{SciPy}
+\emph{SciPy}\footnote{SciPy: \url{https://scipy.org/}} es una biblioteca con herramientas y algoritmos matemáticos. Se basa principalmente en usar \emph{NumPy}.
+
+\subsection{Gdown}
+\emph{Gdown}\footnote{Gdown: \url{https://github.com/wkentaro/gdown}} permite descargar archivos pesados de \emph{Google Drive} al entorno de trabajo deseado.
+
+\subsection{JSON}
+\emph{JSON} permite de una forma sencilla leer archivos con extensión JSON en \emph{Python}. También, permite guardar archivos JSON a través de diccionarios.
+
+\subsection{Shutil}
+\emph{Shutil} se encarga de poder copiar, mover y eliminar todo tipo de archivos del sistema en el que se esté utilizando.
+
+\subsection{ZIPfile}
+\emph{ZIPfile} es una biblioteca que permite trabajar con archivos ZIP. Las posibles herramientas son crear, leer, o añadir un elemento a un ZIP.
+
+\subsection{PyTorch}
+\emph{PyTorch}\footnote{PyTorch: \url{https://pytorch.org/}} es un paquete creado con el fin de realizar cálculos numéricos. Además, permite el uso de la GPU del sistema con el fin de acelerar los tiempos de cómputo.
+
+\subsection{Scikit-Image}
+\emph{Scikit-Image}\footnote{Scikit-Image: \url{https://scikit-image.org/}} contiene un gran número de algoritmos dedicados principalmente al procesamiento de imágenes y a la visión artificial.
 
 
+\section{Documentación}
+\subsection{\LaTeX}
+\LaTeX\footnote{\LaTeX: \url{https://www.latex-project.org/}} es un sistema de composición de textos centrado en la construcción de textos con alta calidad tipográfica. 
+
+\subsection{Overleaf}
+\emph{Overleaf}\footnote{Overleaf: \url{https://www.overleaf.com/}} es un editor colaborativo de \LaTeX{} centrado en la escritura y edición de documentos. Todo ello de forma \emph{online} y de forma gratuita.
+
+\subsection{Tables Generator}
+\emph{Tables Generator}\footnote{Tables Generator: \url{https://www.tablesgenerator.com/\#}} es una web que permite, entre otras cosas, crear tablas y posteriormente
+exportarlas directamente a código en \LaTeX, cosa que facilita de gran manera la creación de las mismas.
+
+\subsection{Draw.io}
+\emph{Draw.io}\footnote{Draw.io: \url{https://app.diagrams.net/}} es una web que permite a sus usuarios crear todo tipo de diagramas. Usado principalmente para poder crear diagramas UML o breves esquemas.

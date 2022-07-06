@@ -8,6 +8,10 @@
 \usepackage{lmodern} % Scalable font
 \usepackage{microtype}
 \usepackage{placeins}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage{numprint}
+
 
 \RequirePackage{booktabs}
 \RequirePackage[table]{xcolor}
@@ -348,7 +352,7 @@
 % Datos de portada
 \title{X-Teeth}
 \author{\nombre}
-\tutor{César Ignacio García Osorio y \\José Miguel Ramírez Sanz}
+\tutor{César Ignacio García Osorio y \\\phantom{Turi: }José Miguel Ramírez Sanz}
 \date{\today}
 
 \begin{document}
@@ -356,7 +360,7 @@
 \maketitle
 
 
-\newpage\null\thispagestyle{empty}\newpage
+\newpage\null\thispagestyle{empty}%\newpage
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -365,13 +369,13 @@
 
 \noindent\includegraphics[width=\textwidth]{cabecera}\vspace{1cm}
 
-\noindent D. César Ignacio García Osorio, profesor del departamento de  Ingeniería Informática, área de  Lenguajes y Sistemas Informáticos y D. José Miguel Ramírez Sanz, profesor del departamento de Ingenería Informática, área de Lenguajes y Sistemas Informáticos.
+\noindent D. César Ignacio García Osorio, profesor del departamento de  Ingeniería Informática, área de  Lenguajes y Sistemas Informáticos y D. José Miguel Ramírez Sanz, profesor del departamento de Ingeniería Informática, área de Lenguajes y Sistemas Informáticos.
 
 \noindent Exponen:
 
 \noindent Que el alumno D. \nombre, con DNI 71363577M, ha realizado el Trabajo final de Grado en Ingeniería Informática titulado X-Teeth. 
 
-\noindent Y que dicho trabajo ha sido realizado por el alumno bajo la dirección del que suscribe, en virtud de lo cual se autoriza su presentación y defensa.
+\noindent Y que dicho trabajo ha sido realizado por el alumno bajo la dirección de los que suscriben, en virtud de lo cual se autoriza su presentación y defensa.
 
 \begin{center} %\large
 En Burgos, {\large \today}
@@ -382,14 +386,14 @@ En Burgos, {\large \today}
 % Author and supervisor
 \begin{minipage}{0.45\textwidth}
 \begin{flushleft} %\large
-Vº. Bº. del Tutor:\\[2cm]
+Vº. Bº. del Tutor:\\[3cm]
 D. César Ignacio García Osorio
 \end{flushleft}
 \end{minipage}
 \hfill
 \begin{minipage}{0.45\textwidth}
 \begin{flushleft} %\large
-Vº. Bº. del co-tutor:\\[2cm]
+Vº. Bº. del co-tutor:\\[3cm]
 D. José Miguel Ramírez Sanz
 \end{flushleft}
 \end{minipage}
@@ -403,7 +407,7 @@ D. José Miguel Ramírez Sanz
 %D. nombre tutor
 
 
-\newpage\null\thispagestyle{empty}\newpage
+%\newpage\null\thispagestyle{empty}\newpage
 
 
 
@@ -413,12 +417,29 @@ D. José Miguel Ramírez Sanz
 % Abstract en castellano
 \renewcommand*\abstractname{Resumen}
 \begin{abstract}
-En este primer apartado se hace una \textbf{breve} presentación del tema que se aborda en el proyecto.
+La infección de la parte interna del diente, formada por nervios y vasos sanguíneos, requiere de una intervención para poder aliviar el dolor al paciente. Este proceso se conoce como endodoncia, en el cual el odontólogo retira todo el tejido dañado.
+
+Para poder desempeñar de forma correcta la tarea, el odontólogo necesita conocer el tamaño del diente de la forma más exacta posible para no causar daños irreparables. Todo el proceso se realiza de forma manual, donde al tratarse de medidas milimétricas es fácil cometer errores de precisión.
+
+Es por ello, que este proyecto busca de la mano del \emph{deep learning} automatizar la tarea de estimar la longitud del diente a través de una radiografía. Para ello se ha investigado acerca de la creación de un modelo capaz de realizar la segmentación de dientes y nervios en radiografías, y obtener una buena técnica para calcular el tamaño del diente.
+
+Finalmente, indicar que este proyecto ha sido una colaboración con el Dr. Álvaro Zubizarreta Macho\footnote{Perfil en ResearchGate: \url{https://www.researchgate.net/profile/Alvaro-Macho}}, odontólogo de la Universidad Alfonso X el Sabio. 
+
+Actualmente se puede acceder a la aplicación del proyecto de dos formas diferentes:
+\begin{itemize}
+    \item \textbf{Google Colab}: \url{https://bit.ly/3R86dJc}
+    \item \textbf{Gamma}: servidor de la Universidad de Burgos que contiene la aplicación.
+    \begin{itemize}
+        \item Enlace web: \url{https://7b9a-193-146-172-150.ngrok.io}
+        \item Contraseña: \texttt{TfgUbu2122}
+    \end{itemize}
+\end{itemize}
+
 \end{abstract}
 
 \renewcommand*\abstractname{Descriptores}
 \begin{abstract}
-Palabras separadas por comas que identifiquen el contenido del proyecto Ej: servidor web, buscador de vuelos, android \ldots
+Endodoncia, \emph{deep learning}, detección, longitud diente, visión artificial, investigación.
 \end{abstract}
 
 \clearpage
@@ -426,12 +447,28 @@ Palabras separadas por comas que identifiquen el contenido del proyecto Ej: serv
 % Abstract en inglés
 \renewcommand*\abstractname{Abstract}
 \begin{abstract}
-A \textbf{brief} presentation of the topic addressed in the project.
+Infection of the inner part of the tooth, formed by nerves and blood vessels, requires an intervention to relieve the patient's pain. This process is known as endodoncy, in which the dentist removes all the damaged tissue.
+
+In order to perform the task correctly, the dentist needs to know the size of the tooth as accurately as possible, so as not to cause irreparable damage. The entire process is carried out manually and it is easy to make a mistake, since millimetric precision is required. 
+
+Therefore, this project pursues the objective of estimating the length of the tooth through an X-ray by using deep learning. For this purpose, research has been carried out on the creation of a model capable of performing the segmentation of teeth and nerves in radiographs, and obtaining a good technique to calculate the size of the tooth.
+
+Finally, indicate that this project has been a collaboration with Dr. Álvaro Zubizarreta Macho\footnote{Profile on ResearchGate: \url{https://www.researchgate.net/profile/Alvaro-Macho}}, dentist at the University of Alfonso X el Sabio.
+
+The software developed in this project can currently be accessed in two different ways:
+\begin{itemize}
+    \item \textbf{Google Colab}: \url{https://bit.ly/3R86dJc}
+    \item \textbf{Gamma}: server owned by the University of Burgos that contains the application.
+    \begin{itemize}
+        \item Web link: \url{https://7b9a-193-146-172-150.ngrok.io}
+        \item Passworrd: \texttt{TfgUbu2122}
+    \end{itemize}
+\end{itemize}
 \end{abstract}
 
 \renewcommand*\abstractname{Keywords}
 \begin{abstract}
-keywords separated by commas.
+Endodoncy, endodontics, deep learning, detection, tooth length, computer vision, research.
 \end{abstract}
 
 \clearpage
@@ -445,8 +482,9 @@ keywords separated by commas.
 
 \clearpage
 
-\listoftables
-\clearpage
+% CGO: como no tienes tablas, no tiene sentido
+%\listoftables
+%\clearpage
 
 \mainmatter
 \include{./tex/1_Introduccion}

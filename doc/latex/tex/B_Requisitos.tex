@@ -1,11 +1,44 @@
 \apendice{Especificación de Requisitos}
 
 \section{Introducción}
+En este apartado se habla acerca de los diferentes objetivos generales del proyecto, junto con los diferentes requisitos y casos de uso.
 
 \section{Objetivos generales}
+Los objetivos generales del proyecto son:
+\begin{itemize}
+    \item Investigar y aplicar nuevas funcionalidades del \emph{deep learning} en la rama de la odontología.
+    \item Desarrollar una aplicación web, sencilla de usar y con un fácil acceso para todo el mundo.
+    \item Ayudar en el proceso de la endodoncia, de forma que la obtención de la longitud, actualmente hecha de forma manual, se pueda automatizar con la aplicación.
+    \item Intentar conseguir que el error de la aplicación en la estimación de la longitud del diente no sea superior a 0.5 milímetros.
+\end{itemize}
 
 \section{Catalogo de requisitos}
+En esta sección se hablará acerca de los distintos requisitos que tiene la aplicación final. Adicionalmente, se indicará quien es el actor de dicha aplicación.
 
+Actor de la aplicación:
+\begin{description}
+\item[Odontólogo:] Será la persona que una vez haya realizado la radiografía del diente del paciente, la introduzca en la aplicación para obtener los resultados de la longitud de dicho diente.
+\end{description}
+
+Los requisitos funcionales de la aplicación son:
+\begin{itemize}
+	\item \textbf{REQ.1:} Llevar a cabo una aplicación capaz de calcular la longitud del diente de una radiografía.
+	\begin{itemize}
+	\item \textbf{REQ.1.1:} El odontólogo podrá cargar la/las radiografías deseadas.
+	\item \textbf{REQ.1.2:} El odontólogo podrá ejecutar tantas veces como quiera la aplicación con las radiografías que desee.
+	\item \textbf{REQ.1.3:} El odontólogo podrá ver que las imágenes se han subido correctamente.
+	\end{itemize}
+	
+	\item \textbf{REQ.2:} Llevar a cabo una aplicación capaz de mostrar la segmentación de la radiografía junto con la recta de cálculo de distancia.
+	\begin{itemize}
+	\item \textbf{REQ.2.1:} El odontólogo podrá ver la segmentación del diente y del nervio.
+	\item \textbf{REQ.2.2:} El odontólogo podrá ver la recta sobre la que se obtiene la longitud del diente.
+	\item \textbf{REQ.2.3:} El odontólogo podrá ver adicionalmente la radiografía original.
+	\end{itemize}
+\end{itemize}
+
+\newpage
 \section{Especificación de requisitos}
-
+\subsection{Diagrama de casos de uso}
+\imagen{TFG-Casos de Uso.drawio}{Diagrama de Casos de Uso de la Aplicación}
 

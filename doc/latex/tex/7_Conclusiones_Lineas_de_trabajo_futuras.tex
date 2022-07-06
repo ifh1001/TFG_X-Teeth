@@ -1,4 +1,26 @@
 \capitulo{7}{Conclusiones y Líneas de trabajo futuras}
 
-Todo proyecto debe incluir las conclusiones que se derivan de su desarrollo. Éstas pueden ser de diferente índole, dependiendo de la tipología del proyecto, pero normalmente van a estar presentes un conjunto de conclusiones relacionadas con los resultados del proyecto y un conjunto de conclusiones técnicas. 
-Además, resulta muy útil realizar un informe crítico indicando cómo se puede mejorar el proyecto, o cómo se puede continuar trabajando en la línea del proyecto realizado. 
+\section{Conclusiones}
+Este proyecto surge de la mano del odontólogo Álvaro Zubizarreta Macho, quien propuso la creación de una aplicación que le ayudara en la endodoncia al ser un proceso totalmente artesanal y con una gran posibilidad a fallo.
+
+El primer problema que hubo fue crear un modelo con tan pocas radiografías, pero, pese a ello, se solucionó transformando las radiografías prestadas, gracias al \emph{data augmentation}.
+
+Tras conseguir el modelo se mostraron los primeros resultados de la segmentación de dientes y nervios al odontólogo, quien reconoció que eran bastantes buenos. Este profesional fue de ayuda en lo relacionado con las técnicas de cálculo, permitiendo encontrar la forma más óptima. Lamentablemente, los resultados obtenidos no se han podido probar en su totalidad debido a diversos problemas en la resolución y tamaño de las radiografías, los cuales no han sido solucionados a lo largo del proyecto.
+
+A pesar de esto, los resultados son gratamente satisfactorios debido a que el odontólogo afirmó que las predicciones del modelo eran correctas. Sin embargo, hubiera sido más gratificante poder analizar la calidad de los resultados.
+Durante este proceso se ha disfrutado del aprendizaje del \emph{deep learning} en \emph{Python}, debido a ser algo de lo que no se tenía mucho conocimiento. Además, se han conocido una gran cantidad de herramientas útiles de cara al futuro, como \emph{Ngrok} y \emph{tmux}.
+
+Finalmente, cabe destacar que se ha desarrollado una aplicación sencilla y fácil de usar para usuarios alejados del mundo de la programación y los \emph{notebooks}, permitiendo que esta herramienta pueda ser usada por cualquier cliente.
+
+\section{Líneas de trabajo futuras}
+En mi opinión, unas mejoras que se podrían realizar al proyecto en el futuro serían:
+
+\begin{enumerate}
+    \item \textbf{Cálculo de longitud de los demás dientes de la radiografía:} actualmente se devuelve la longitud del diente y del nervio con mayor precisión por parte del modelo de \emph{Detectron2}. Es por ello, que se podría calcular la longitud de todos los dientes que aparezcan en las radiografías con el fin de poder ayudar a los odontólogos en caso de que necesiten más longitudes.
+    
+    \item \textbf{Aumentar el número de radiografías con el que entrenar al modelo:} cómo se ha comentado en puntos anteriores, el proyecto tan solo ha contado con 10 radiografías, las cuales han tenido que ser transformadas para poder contar con un gran número de imágenes con las que entrenar al modelo. Pero realmente, no dejan de ser 10 imágenes reales con sus variaciones. Es por ello, que sería buena idea aumentar considerablemente el número de radiografías para conseguir un modelo más robusto y capaz de detectar mejor los dientes y nervios en aquellos casos más extraños.
+    
+    \item \textbf{Desarrollar una aplicación web:} la aplicación final se ha desarrollado en un \emph{notebook}, por lo que sería buena idea transportarla a una aplicación web de forma que resulte más cómodo el acceso a los clientes. Evitando, por ejemplo, que tengan que esperar tiempos de espera en la instalación de \emph{Detectron2} en \emph{Google Colab}.
+    
+    \item \textbf{Añadir nuevas funcionalidades a la aplicación:} el proyecto se ha centrado únicamente en crear una aplicación capaz de calcular la longitud del diente, pero en el futuro se podrían implementar más funcionalidades con las que ayudar en las endodoncias o incluso en alguna otra rama de la odontología.
+\end{enumerate}

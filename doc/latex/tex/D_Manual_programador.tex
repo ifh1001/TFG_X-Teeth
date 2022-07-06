@@ -1,11 +1,116 @@
 \apendice{Documentación técnica de programación}
 
 \section{Introducción}
+Este apartado va dedicado a aquellas personas del ámbito informático que quisieran seguir con el proyecto y que necesitan conocer los elementos básicos para su correcta comprensión. En ese apartado se hablará de:
+
+\begin{itemize}
+    \item \textbf{Estructura de directorios:} contiene una explicación básica de como están distribuidos los directorios, y los ficheros que contiene cada uno de ellos. Dicha estructura se puede comprobar en el repositorio de \emph{GitHub} del proyecto.
+    
+    \item \textbf{Manual del programador:} se explica la funcionalidad de cada fichero, de forma que puedan ser comprendidos en caso de que se quiera trabajar con ellos.
+    
+    \item \textbf{Compilación, instalación y ejecución del proyecto:} contiene los pasos necesarios para la instalación, compilación y ejecución de la aplicación del proyecto.
+    
+    \item \textbf{Pruebas del sistema:} recoge las diversas pruebas que se han realizado a lo largo del proyecto. 
+\end{itemize}
 
 \section{Estructura de directorios}
+En este punto se va a halar acerca de la distribución de directorios y ficheros que hay en el repositorio de \emph{GitHub}\footnote{Repositorio: \url{https://github.com/ifh1001/TFG_X-Teeth}} llevado a cabo a lo largo del proyecto.
+
+\dirtree{%
+.1 /.
+.2 \texttt{doc}.
+.2 \texttt{src}.
+.2 \texttt{README.md}.
+}
+
+La distribución principal del directorio está formada por tres elementos:
+\begin{itemize}
+    \item \texttt{doc:} dierctorio que contiene toda la documentación asociada al poryecto.
+    \item \texttt{src:} directorio que contiene todos los ficheros con código hechos en el proyecto.
+    \item \texttt{README.md:} fichero que contiene una descripción del repositorio en \emph{GitHub}
+\end{itemize}
+
+Ahora analizaremos internamente los dos directorios del proyecto, para ver que contiene cada uno de ellos.
+
+\subsection{Documentación}
+La documentación se encuentra en el directorio \texttt{/doc} y cuya estructura es la siguiente:
+
+\dirtree{%
+.1 \texttt{/doc/}.
+.2 \texttt{latex}.
+}
+
+El directorio \texttt{/doc/latex} contiene en su interior toda la documentación realizada en \LaTeX, y que sigue la estructura dictaminada por el tribunal de la Universidad de Burgos. 
+
+\subsection{Código}
+Todo el código realizado a lo largo del proyecto se encuentra en el directorio \texttt{/src}. En su interior se encuentran todas las pruebas llevadas a cabo junto con la aplicación final y todo lo necesario para que pueda funcionar correctamente. La estructura de directorios es la siguiente:
+
+\dirtree{%
+.1 \texttt{/src/}.
+.2 \texttt{ aplicacion}.
+.3 \texttt{output}.
+.4 \texttt{descargaModelo.py}.
+.3 \texttt{Aplicacion.ipynb}.
+.3 \texttt{funciones.py}.
+.2 \texttt{pruebas}.
+.3 \texttt{ConvexHull.ipynb}.
+.3 \texttt{DataAugmentation.ipynb} .
+.3 \texttt{DeteccionBordes.ipynb}.
+.3 \texttt{Detectron2\_1Entrenador.ipynb}.
+.3 \texttt{Detectron2\_2Entrenadores.ipynb}.
+.3 \texttt{Skimage+CV2\_DetecciónBordes.ipynb}.
+}
+
+El directorio \texttt{/src} está formado por dos directorios principales:
+
+\begin{itemize}
+    \item \texttt{aplicacion:} está formado por el \emph{notebook} que permite usar la aplicación final del proyecto, junto con las diversas funciones que tiene en el archivo \texttt{funciones.py} para que la aplicación pueda funcionar correctamente. Además, contiene el directorio \texttt{/output} donde en su interior se encuentra un ejecutable de \emph{Python} que permite descargar el modelo desde \emph{Google Drive}.
+    
+    \item \texttt{pruebas:} este directorio contiene todas las pruebas del proyecto. Las pruebas se pueden dividir en tres categorías:
+    \begin{itemize}
+        \item \textbf{Data augmentation de las radiografías:} el fichero encargado de obtener las modifcicaciones de las radiografías originales a través de \emph{data augmentation} es \texttt{DataAugmentation.ipynb}.
+        \item \textbf{Detección de bordes:} correspondiente a las tres aproximaciones para obtener los puntos del borde de dientes y nervios, cuyos ficheros son \texttt{ConvexHull.ipynb}, \texttt{DeteccionBordes.ipynb} y \texttt{Skimage+CV2\_DetecciónBordes.ipynb}. 
+        \item \textbf{Puesta a punto de Detectron2 y la obtención de su modelo:} los ficheros \texttt{Detectron2\_1Entrenador.ipynb} (trabaja con un modelo) y \texttt{Detectron2\_2Entrenadores.ipynb} (trabaja con dos modelos) son pruebas con \emph{Detectron2} con el fin de aprender su uso y diversas pruebas para obtener el modelo final. Además, el fichero \texttt{Detectron2\_1Entrenador.ipynb} contiene las diversas pruebas con las técnicas implementadas para obtener la longitud del diente.
+    \end{itemize}
+\end{itemize}
 
 \section{Manual del programador}
+Previamente, ya se ha indicado que todo el código del proyecto se encuentra en el directorio \texttt{/src}. Dicho directorio está formado por otros dos directorios correspondientes a las pruebas y a la aplicación final.
+
+El contenido de ambos directorios ya se ha explicado previamente, por lo que si en el futuro alguien desea actualizar la aplicación necesitará actualizar el fichero \texttt{funciones.py} añadiendo las nuevas implementaciones. 
+
+En caso de querer continuar con las pruebas o investigar nuevas técnicas de cálculo de longitud del diente, se deberán de añadir al directorio de pruebas. Otra posibilidad es transformar las pruebas a archivos \texttt{.py}. ya que actualmente las pruebas se encuentran en \emph{notebooks}, de forma que pueda ser más sencillo trabajar con ellos
 
 \section{Compilación, instalación y ejecución del proyecto}
+Para poder utilizar la aplicación del proyecto no es necesaria su descarga e instalación en ningún dispositivo, puesto que tiene dos opciones para poder utilizarla, y ambas son \emph{online}.
+
+Como única instalación que habría que hacer es la de \emph{Detectron2} junto con la descarga del modelo y de las funciones de la aplicación en \emph{Google Colab}. Esto se debe a que los \emph{notebooks} en \emph{Google Colab} pierden todos sus ficheros tras la finalización de su sesión. Además, \emph{Detectron2} no se encuentra como una de las bibliotecas ya instaladas, por lo que siempre será necesaria su descarga de su repositorio de \emph{GitHub} con su posterior instalación.
+
+Todo este proceso se encuentra automatizado en la aplicación, tan solo sería necesaria la ejecución de las celdas encargadas de dichas tareas y esperar a que terminen.
+
+Con respecto al uso de la aplicación en Gamma, no sería necesaria ninguna instalación de nada adicional, ya que el servidor cuenta con todo lo necesario para que la aplicación pueda funcionar al completo.
+
+Por último, en caso de que alguien quiera instalar en su ordenador el entorno necesario para usar la aplicación tiene que tener cuidado con las versiones que instala, ya que las versiones de \emph{Detectron2}, \emph{PyTorch} y \emph{CUDA Toolkit} tienen que ser compatibles entre ellas. En el caso de este proyecto las versiones son las mostradas en la tabla \ref{versiones}.
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Biblioteca} & \textbf{Versión} \\ \hline
+Detectron2          & 0.2.1            \\ \hline
+PyTorch             & 1.4.0            \\ \hline
+CUDA Toolkit        & 10.1             \\ \hline
+\end{tabular}
+\captionof{table}{Versiones Detectron2, PyTorch y CUDA Toolkit}
+\label{versiones}
+\end{center}
 
 \section{Pruebas del sistema}
+La base principal de este proyecto ha sido la investigación del \emph{deep learning} en la rama de la odontología para finalmente realizar una aplicación. Inicialmente, se trabajó en la obtención de más radiografías para el proyecto, mediante la transformación de las originales que nos habían sido prestadas por el odontólogo.
+
+Lo siguiente fueron diversas pruebas de técnicas para obtener los puntos de los dientes y nervios de las radiografías modificadas para poder usarlas en la creación de un modelo.
+
+Con el modelo obtenido se efectuaron pruebas de las predicciones, más concretamente se utilizó la técnica IoU \emph{(Intersection over Union)} para evaluar como de buenas eran los resultados del modelo.
+
+Finalmente, se hicieron pruebas de los diversos métodos para obtener la longitud del diente, aunque como ya se ha comentado previamente, los valores obtenidos no eran del todo reales al no tener tamaños iguales en las radiografías ni la longitud del diente radiografiado.
+
+Como se puede apreciar, se han llevado a cabo diversas pruebas en las técnicas y modelos obtenidos, pero no se han efectuado como tal pruebas del sistema. Ya que la aplicación era algo más secundario en el proyecto, y los mayores esfuerzos se centraron en la investigación.

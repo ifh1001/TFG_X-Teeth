@@ -1,68 +1,72 @@
 \apendice{Plan de Proyecto Software}
 
 \section{Introducción}
-Dentro de este apartado se van a tratar dos puntos a cerca del proyecto:
+Dentro de este apartado se van a tratar dos puntos acerca del proyecto:
 \begin{itemize}
-    \item La Planificación que se ha llevado.
+    \item La Planificación temporal.
     \item La Viabilidad del mismo.
 \end{itemize}
 \section{Planificación temporal}
-Para llevar a cabo el proyecto se ha seguido la metodología de trabajo \emph{Scrum}, dónde cada semana se llevaba a cabo un \emph{sprnt} distinto. En cada uno de estos \emph{sprints} se consensuaban unos objetivos y tareas a llevar a cabo para la siguiente semana.
+Para llevar a cabo el proyecto se ha seguido la metodología de trabajo \emph{Scrum}, dónde cada semana se llevaba a cabo un \emph{sprint} distinto. En cada uno de estos \emph{sprints} se consensuaban unos objetivos y tareas a llevar a cabo para la siguiente semana.
 
-En situaciones especiales las reuniones se podrían atrasar una semanas con el fin de desempeñar correctamente los objetivos marcados.
+En situaciones especiales, las reuniones se podrían atrasar unas semanas con el fin de desempeñar correctamente los objetivos marcados.
 
-Para poder reflejar el trabajo que se iba realizando semana tras semana se utilizó la plataforma de \emph{GitHub} cuyo repositorio del proyecto es \url{https://github.com/ifh1001/TFG_X-Teeth}.
+Para poder reflejar el trabajo que se iba realizando semana tras semana se utilizó la plataforma de \emph{GitHub} cuyo repositorio que recoge el trabajo del proyecto es \url{https://github.com/ifh1001/TFG_X-Teeth}.
 
 \subsection{Sprint 1 - 02/02/2022}
-En este primer \emph{sprint} se basó principalmente en la explicación por parte de mis tutores sobre el trabajo a realizar en el TFG X-Teeth. Además, se concretó la fecha de las reuniones de cada \emph{sprint}, siendo esta los viernes a las 11:30 de la mañana a través de \emph{Microsoft Teams}.
+Este primer \emph{sprint} se basó principalmente en la explicación por parte de mis tutores sobre el trabajo a realizar en el TFG X-Teeth. Además, se concretó la fecha de las reuniones de cada \emph{sprint}, siendo esta los viernes a las 11:30 de la mañana a través de \emph{Microsoft Teams}.
 
-Como primeras tareas a realizar fueron:
+Como primeras tareas a llevar a cabo fueron:
 \begin{itemize}
-    \item Crear cuenta en \emph{Overleaf}, para realizar la documentación con \emph{Latex}.
+    \item Crear cuenta en \emph{Overleaf}, para hacer la documentación con \LaTeX.
     \item Crear el repositorio en \emph{GitHub}.
     \item Leer diversos artículos sobre el \emph{Deep Learning} en la rama de la odontología.
-    \item Buscar información a cerca de la librería de \emph{Keras}, ya que se pensó que podría ser una solución para llevar a cabo el proyecto.
+    \item Buscar información acerca de la librería de \emph{Keras}, ya que se pensó que podría ser una solución para llevar a cabo el proyecto.
 \end{itemize}
 \subsection{Sprint 2 - 11/02/2022}
-En esta segunda reunión se habló sobre los pocos casos de dientes que había para poder trabajar y que mi tutor José Miguel había estado desarrollando un \emph{notebook} para poder rotar las diversas imágenes que teníamos y así poder trabajar con más casos distintos. 
+En esta segunda reunión se habló sobre los pocos casos de dientes que había para poder trabajar y que mi tutor José Miguel había estado desarrollando un \emph{notebook} que hacía uso del \emph{data augmentation} para así disponer de un mayor número de casos distintos. 
 
-También, debido a este problema de tener pocos casos, se decidió usar \emph{Detectron2}, ya que es una librería de \emph{Python} que permite detectar objetos con muy pocos casos.
-Como resultado de esta reunión las tareas a desarrollar para la siguiente semana fueron:
+También, debido al problema de tener pocas radiografías, se decidió usar \emph{Detectron2}, ya que es una biblioteca de \emph{Python} que permite detectar objetos con muy pocos casos.
+Como resultado de esta reunión, las tareas a desarrollar para la siguiente semana fueron:
 \begin{itemize}
     \item Terminar el \emph{notebook} de mi tutor.
     \item Intentar instalar \emph{Detectron2} en mi ordenador.
 \end{itemize}
+
 \subsection{Sprint 3 - 18/02/2022}
 Para este \emph{sprint} solo puede terminar el \emph{notebook}, ya que la parte de instalación de \emph{Detectron2} me resultó imposible, debido a que no existe una versión oficial para trabajar con Windows 10 y generalmente surgen incompatibilidades entre varios paquetes en este sistema operativo. Como resultado de esto, la única tarea a realizar para el siguiente \emph{sprint} fue seguir intentando instalar \emph{Detectron2}.
-\subsection{Sprint 4 - 23/02/2022}
-Esta reunión fue distinta a las anteriores, ya que inicialmente mantuvimos una charla con el dentista que da origen a este proyecto. Se le comentó que había un error en algunos de los casos que nos había pasado y se acordó que nos pasaría un total de 150 radiografías para poder trabajar correctamente con \emph{Detectron2}.
 
-La segunda parte de la reunión fue ya sin el dentista, en la cuál comenté que no conseguí instalar \emph{Detectron2}. Debido a esta situación, se decidió trabajar por el momento con \emph{Google Colab}, ya que era muy sencillo usar la librería de detección de objetos, y en el futuro utilizar alguna de las máquinas que dispone la Universidad de Burgos, como Gamma o Beta. 
+\subsection{Sprint 4 - 23/02/2022}
+Esta reunión fue distinta a las anteriores, ya que inicialmente mantuvimos una charla con el odontólogo que da origen a este proyecto. Se le comentó que había un error en algunos de los casos que nos había pasado y se acordó que nos pasaría un total de 150 radiografías para poder trabajar correctamente con \emph{Detectron2}.
+
+La segunda parte de la reunión fue ya sin el odontólogo, en la cual comenté que no conseguí instalar \emph{Detectron2}. Debido a esta situación, se decidió trabajar por el momento con \emph{Google Colab}, ya que era muy sencillo usar la librería de detección de objetos, y en el futuro utilizar alguna de las máquinas a disposición de la Universidad de Burgos, como Gamma o Beta. 
 
 Las tareas resultantes este \emph{sprint} fueron:
 \begin{itemize}
-    \item Aprender a usar \emph{Detectron2} en \emph{Google Colab} .
-    \item Crear una función que transformara los archivos json del dentista a la forma COCO que necesita \emph{Detectron2} para poder trabajar.
+    \item Aprender a utilizar \emph{Detectron2} en \emph{Google Colab}.
+    \item Crear una función que transformara los archivos JSON del dentista a la forma COCO que necesita \emph{Detectron2} para poder trabajar.
 \end{itemize}
-\subsection{Sprint 5 - 04/03/2022}
-Para este \emph{sprint} tras haber realizado con éxito la segunda tarea de la reunión pasada creé el primer sistema entrenador de \emph{Detectron2}, dónde, pese a trabajar con tan solo 10 imágenes (7 para entrenar y 3 para testear) se obtuvieron unos resultados bastantes buenos en la parte de detección del diente y regulares en la parte del nervio.
 
-Tras obtener estos resultados tan esperanzadores, las siguientes tareas a realizar fueron:
+\subsection{Sprint 5 - 04/03/2022}
+Para este \emph{sprint} tras haber realizado con éxito la segunda tarea de la reunión pasada, creé el primer sistema entrenador de \emph{Detectron2}, dónde, pese a trabajar con tan solo 10 imágenes (7 para entrenar y 3 para testear) se obtuvieron unos resultados bastante buenos en la parte de detección del diente y regulares en la parte del nervio.
+
+Tras obtener estos resultados tan esperanzadores, las siguientes tareas a hacer fueron:
 \begin{itemize}
-    \item Aplicar la técnica  \emph{Convex Hull} a las imágenes rotadas obtenidas por el  \emph{notebook} terminado del  \emph{sprint} 2, con el fin de obtener los puntos de la máscara y crear los json correspondientes y poder trabajar con más casos.
+    \item Aplicar la técnica \emph{Convex Hull} a las imágenes rotadas obtenidas por el \emph{notebook} terminado del  \emph{sprint} 2, con el fin de obtener los puntos de la máscara y generar los JSON correspondientes y poder trabajar con más casos.
     \item Aplicar la técnica IoU (\emph{Intersection over Union}), para comprobar si las predicciones del \emph{Detectron2} están siendo buenas.
 \end{itemize}
+
 \subsection{Sprint 6 - 11/03/2022}
 Los resultados obtenidos por el \emph{Convex Hull} no fueron los correctos, ya que esta técnica no funciona correctamente en las zonas curvas de los dientes y nervios.
 
-Además, detecte un problema en el \emph{notebook} del \emph{sprint} 2, ya que las máscaras de los dientes y nervios no se encontraban en el tamaño correcto con respecto a la imagen de la radiografía correspondiente.
+Además, detecte un problema en el \emph{notebook} del \emph{sprint} 2, puesto que las máscaras de los dientes y nervios no se encontraban en el tamaño correcto con respecto a la imagen de la radiografía correspondiente.
 
-Por último, se creyó conveniente aplicar otra estrategia con el \emph{Detectron2}, ya inicialmente teníamos un modelo para entrenar a la vez dientes y nervios, por lo que se pensó que con la siguiente estrategia se conseguirían mejores resultados:
+Por último, se creyó conveniente aplicar otra estrategia con el \emph{Detectron2}, ya que inicialmente teníamos un modelo para entrenar a la vez dientes y nervios, por lo que se pensó que con la siguiente estrategia se conseguirían mejores resultados:
 \begin{enumerate}
     \item Crear un modelo que solo entrenara dientes.
     \item Obtener las predicciones de los dientes.
     \item Recortar la caja que contenía el diente de la predicción.
-    \item Crear un modelo que solo entrenara nervios.
+    \item Crear un modelo que únicamente entrenara nervios.
     \item Obtener las predicciones de los nervios.
 \end{enumerate}
 Por tanto, para el siguiente \emph{sprint} tendría que realizar las siguientes tareas:
@@ -70,88 +74,96 @@ Por tanto, para el siguiente \emph{sprint} tendría que realizar las siguientes 
     \item Buscar una técnica que realice correctamente la detección de los puntos de las máscaras de los dientes y nervios.
     \item Solucionar el problema de tamaños entre las máscaras y la radiografía.
     \item Llevar a cabo la nueva estrategia del \emph{Detectron2}.
-    \item Mostrar una gráfica con la pérdida total durante el entrenamiento con el fin de ver a partir de que iteración se produce un \emph{overfitting}.
+    \item Mostrar una gráfica con la \emph{pérdida total} durante el entrenamiento con el fin de ver a partir de que iteración se produce un \emph{overfitting}.
 \end{itemize}
-\subsection{Sprint 7 - 25/03/2022}
-En el anterior \emph{sprint} se completaron con éxito todas las tareas, pese a ello, la técnica aplicada para detectar los bordes gracias a la librería CV2 de \emph{Python} obtuvo unos buenos resultados aunque no del todo precisos.
 
-Por tanto, sería útil buscar alguna otra alternativa con el fin de ver si se pueden conseguir una mayor precisión en la detección de los puntos de los bordes de las máscaras.
+\subsection{Sprint 7 - 25/03/2022}
+En el anterior \emph{sprint} se completaron con éxito todas las tareas. Pese a ello, la técnica aplicada para detectar los bordes gracias a la librería CV2 de \emph{Python} obtuvo unos buenos resultados aunque no del todo precisos.
+
+Por tanto, sería útil buscar alguna otra alternativa con el fin de ver si se puede conseguir una mayor precisión en la detección de los puntos de los bordes de las máscaras.
 
 Como resultado de esta reunión, las tareas a realizar para la siguiente semana son:
 \begin{itemize}
     \item Buscar alguna alternativa en la detección de bordes, con el fin de conseguir mejores resultados.
     \item Entrenar \emph{Detectron2} con las radiografías originales y no con las que tienen el diente resaltado, ya que seguramente se estén consiguiendo buenos resultados gracias a la ``ayuda'' que dispone en las imágenes.
-    \item Buscar información a cerca de la convención PEP8, y empezar a aplicarlo, con el fin de conseguir un código mas limpio.
+    \item Buscar información acerca de la convención PEP8, y empezar a aplicarlo, con el fin de conseguir un código más limpio.
     \item Añadir un límite en la parte de validación para que una vez se encuentre el punto en el que se produce el \emph{overfitting} no siga entrenando.  
 \end{itemize}
+
 \subsection{Sprint 8 - 01/04/2022}
 En esta semana se ha conseguido mejorar la forma de obtener los puntos de las máscaras de los dientes y nervios, para poder trabajar correctamente con ellas. 
 
-Esto se ha conseguido juntando dos librerías: inicialmente se usa \emph{Skimage} para obtener únicamente el borde de cada una de las máscaras y, a continuación, se utiliza CV2 para conseguir todos los puntos que dan lugar a ese borde. De esta forma se consigue una precisión mucho mayor que aplicando únicamente CV2 sobre las imágenes.
+Esto se ha conseguido juntando dos librerías: inicialmente se usa \emph{scikit-image} para obtener únicamente el borde de cada una de las máscaras y, a continuación, se utiliza CV2 para conseguir todos los puntos que dan lugar a ese borde. De esta manera se consigue una precisión mucho mayor que aplicando únicamente CV2 sobre las imágenes.
 
 Las próximas tareas a realizar son:
 \begin{itemize}
     \item Instalar \emph{Detectron2} en la máquina de la Universidad de Burgos, Gamma, para poder trabajar en ella.
-    \item Automatizar el proceso de repartición del conjunto de datos de forma que el 60\% sea de entrenamiento, un 20\% para test y el último 20\% para validación. 
+    \item Automatizar el proceso de repartición del conjunto de datos de modo que el 60\% sea de entrenamiento, un 20\% para test y el último 20\% para validación. 
 \end{itemize}
-\subsection{Sprint 9 - 22/04/2022}
-Para este \emph{sprint} no se consiguió instalar \emph{Detectron2} en la máquina Gamma debido a alguna incompatibilidad entre versiones. Pese a ello se siguió trabajando en \emph{Google Colab}, y se crearon las funciones necesarias para poder distribuir las imágenes de manera aleatoria entre el entrenamiento, validación y test. 
 
-Adicionalmente, se añadió de forma correcta el cálculo de la precisión de las predicciones a través del IoU ya mencionado anteriormente. Dicho valor se calculó tanto en el \emph{notebook} de dos modelos entrenadores cómo en el de un modelo entrenador, con el fin de ver cual de ellos muestra mejores resultados, que por el momento es el segundo.
+\subsection{Sprint 9 - 22/04/2022}
+Para este \emph{sprint} no se consiguió instalar \emph{Detectron2} en la máquina Gamma debido a alguna incompatibilidad entre versiones. Pese a ello, se siguió trabajando en \emph{Google Colab}, y se crearon las funciones necesarias para poder distribuir las imágenes de manera aleatoria entre el entrenamiento, validación y test. 
+
+Adicionalmente, se añadió de forma correcta el cálculo de la precisión de las predicciones a través del IoU ya mencionado anteriormente. Dicho valor se calculó tanto en el \emph{notebook} de dos modelos entrenadores cómo en el de un modelo entrenador, con el fin de ver cuál de ellos muestra mejores resultados, que por el momento es el segundo.
 
 Por último, se mejoró el código en uno de los \emph{notebook} para facilitar la comprensión del mismo a través del estándar PEP8.
 
 La tarea a realizar para la próxima semana es:
 \begin{itemize}
-    \item Conseguir instalar \emph{Detectron2} en Gamma mediante versiones más antiguas de los paquete con el fin de evitar incompatibilidades.
+    \item Conseguir instalar \emph{Detectron2} en Gamma mediante versiones más antiguas de los paquetes con el fin de evitar incompatibilidades.
 \end{itemize}
+
 \subsection{Sprint 10 - 29/04/2022}
 Para esta semana se ha conseguido instalar \emph{Detectron2} en Gamma. Para ello, se han tenido que utilizar versiones antiguas tanto de \emph{CUDA Toolkit} cómo de  \emph{PyTorch} para poder evitar las distintas incompatibilidades entre versiones.
 
-Se han instalado la versiones 10.1 de \emph{CUDA Toolkit} y la versión 1.4 de \emph{PyTorch}, junto con la versión del \emph{Detectron2} compatible para soportar dichas librerías.
+Se han instalado la versión 10.1 de \emph{CUDA Toolkit} y la versión 1.4 de \emph{PyTorch}, junto con la versión del \emph{Detectron2} compatible para soportar dichas librerías.
 
 Las dos tareas próximas a realizar son:
 \begin{itemize}
     \item Implementar de forma correcta el método para poder medir el tamaño del nervio del diente de la imagen.
     \item Investigar las distintas GUI de \emph{Python} para elegir una de ellas y poder montar la aplicación final.  
 \end{itemize}
+
 \subsection{Sprint 11 - 06/05/2022}
-Para este \emph{sprint} se ha implementado una técnica que permite calcular la longitud del nervio. Dicha técnica se basa en obtener la distancia máxima entre el nervio y el diente. Pese a que se ha conseguido que funcione correctamente estamos a la espera del dentista para poder transformar la distancia en píxeles a una longitud real y poder analizar los resultados que da.
+Para este \emph{sprint} se ha implementado una técnica que permite calcular la longitud del nervio. Dicha técnica se basa en obtener la distancia máxima entre el nervio y el diente. Pese a que se ha conseguido que funcione correctamente, estamos a la espera del dentista para poder transformar la distancia en píxeles a una longitud real y poder analizar los resultados que da.
 
-La segunda técnica que se quería implementar se basaba en usar \emph{Skeletonize} de la librería \emph{Skimage}. Dicha técnica no se ha implementado de forma correcta y, por tanto, aún no se sabe si puede dar buenos resultados.
+La segunda técnica que se quería implementar se basaba en usar \emph{Skeletonize} de la librería \emph{scikit-image}. Dicha técnica no se ha implementado de forma correcta y, por tanto, aún no se sabe si puede dar buenos resultados.
 
-Con respecto a las GUI de \emph{Python}, tras analizar varias he decidido quedarme con \emph{EasyGUI} y con \emph{PySimpleGUI}. Y una vez haya probado ambas quedarme con una de ellas.
+Con respecto a las GUI de \emph{Python}, tras analizar varias se ha decidido trabajar con \emph{EasyGUI} y con \emph{PySimpleGUI}. Y una vez se hayan probado ambas elegir una de las dos.
 
-Por tanto, las tareas a realizar para la semana que viene son:
+Como resultado, las tareas a realizar para la semana que viene son:
 \begin{itemize}
     \item Corregir el uso de \emph{Skeletonize} para que funcione correctamente y ver que resultados da.
     \item Instalar \emph{EasyGui} y \emph{PySimpleGui} en el entorno de \emph{conda} de Gamma para ver que funcionen correctamente y seleccionar la mejor.
 \end{itemize}
+
 \subsection{Sprint 12 - 13/05/2022}
 Para esta reunión han ocurrido dos hechos importantes. El primero es que a mitad del \emph{sprint} anterior el odontólogo que da origen a este proyecto había cambiado de idea. Inicialmente, lo principal era obtener la medida del nervio, pero ahora el odontólogo quiere la longitud del diente.
 
-El segundo hecho importante, ha sido que el propio odontólogo ha asistido a la reunión para ver los resultados que se están consiguiendo. También, nos comentó el proceso que realiza para poder medir el tamaño del diente y al mostrarle las técnicas que utilizamos para calcular la longitud nos indicó que la correcta sería la que mide el diente por los puntos centrales.
+El segundo hecho relevante, ha sido que el propio odontólogo ha asistido a la reunión para ver los resultados que se están consiguiendo. También, nos comentó el proceso que realiza para poder medir el tamaño del diente y al mostrarle las técnicas que utilizamos para calcular la longitud nos indicó que la correcta sería la que mide el diente por los puntos centrales.
 
 Como última cosa a comentar sería la imposibilidad de poder ejecutar un GUI desde el \emph{notebook} en Gamma, debido a que al ser un servidor no tiene ningún \emph{display}
-asignado. Por ello, la aplicación final se realizará en un \emph{notebook}.
+asignado. Por ello, la aplicación final se llevará a cabo en un \emph{notebook}.
 
-Las próximas tareas a realizar son:
+Las próximas tareas a hacer son:
 \begin{itemize}
     \item Investigar y probar \emph{ipywidgets} con el fin de poder tener una pequeña interfaz dentro del \emph{notebook} que contendrá la aplicación final.
-    \item Para poder medir la longitud del diente por la parte central, se ha pensado en utilizar \emph{Skeletonize} sobre el nervio y a la lineal central obtenida alargarla hasta el diente, para posteriormente calcular su longitud.
+    \item Para poder medir la longitud del diente por la parte central, se ha pensado en emplear \emph{Skeletonize} sobre el nervio y a la lineal central obtenida alargarla hasta el diente, para posteriormente calcular su longitud.
 \end{itemize}
+
 \subsection{Sprint 13 - 20/05/2022}
 Para este \emph{sprint} se ha implementado la técnica para medir la longitud del diente a través de la línea central del nervio. Con dicha técnica se han implementado un total de tres técnicas distintas para poder calcular el tamaño del diente.
 
 Pese a tener varias técnicas, ninguna de ellas parece que da buenos resultados por el momento, ya que los errores relativos son demasiados altos para que el odontólogo pueda usar algunos de estos métodos.
 
-Con respecto a \emph{ipywidgets}, se ha conseguido instalar, además de, investigar y probar los distintos tipos de \emph{widgets} que hay con el fin de ver cuales usar en la aplicación final.
+Con respecto a \emph{ipywidgets}, se ha conseguido instalar, además de investigar y probar los distintos tipos de \emph{widgets} que hay con el fin de ver cuáles utilizar en la aplicación final.
 
 Las tareas a realizar para la próxima semana son:
 \begin{itemize}
     \item Investigar porque los resultados obtenidos no son los esperados, ya que el proceso de segmentación es bastante bueno.
     \item Desarrollar la aplicación final con las distintas funcionalidades de \emph{ipywidgets}.
 \end{itemize}
+
 \subsection{Sprint 14 - 27/05/2022}
 Para esta semana se ha conseguido desarrollar una simple aplicación que permita subir al odontólogo una radiografía y que le presente los resultados obtenidos. Actualmente, la aplicación muestra la radiografía junto con la recta correspondiente a la longitud del diente y un cuadro de texto con el tamaño del mismo.
 
@@ -162,8 +174,9 @@ Para la siguiente semana las tareas a realizar son:
     \item Permitir subir en la aplicación varias radiografías a la vez y mostrar para cada una de ellas los resultados obtenidos.
     \item En la aplicación, mostrar la segmentación del diente y el nervio obtenida en cada caso.
     \item Probar a exportar el modelo obtenido del \emph{Detectron2} a un \emph{notebook} en \emph{Google Colab} con el fin de facilitar las conexiones a la aplicación.
-    \item En caso de que la tarea anterior no se pueda efectuar, usar \emph{tmux} junto con \emph{ngrok} para permitir conexiones al \emph{notebook} que tiene la aplicación en Gamma.
+    \item En caso de que la tarea anterior no se pueda efectuar, usar \emph{tmux} junto con \emph{Ngrok} para permitir conexiones al \emph{notebook} que tiene la aplicación en Gamma.
 \end{itemize}
+
 \subsection{Sprint 15 - 03/06/2022}
 Para esa semana se han conseguido implementar las distintas mejoras de la aplicación final. 
 
@@ -178,16 +191,17 @@ Las próximas tareas a realizar son:
     \item Usar alguna técnica que permita dividir el modelo en pequeños archivos para poder trabajar con ello de forma cómoda.
     \item Implementar la nueva técnica de cálculo de longitud del diente mencionada anteriormente.
 \end{itemize}
+
 \subsection{Sprint 16 - 10/06/2022}
 Para este \emph{sprint} se ha buscado algún \emph{widget} que permita hacer zum a las imágenes en los resultados de la aplicación, pero no se ha encontrado nada útil. También, se ha añadido que cada vez que se cargue una imagen se muestre un mensaje con el nombre de todas las imágenes cargadas.
 
-Con respecto a la técnica a implementar, se ha desarrollado correctamente. Pero la parte de buscar la distancia máxima desde el extremo del nervio hasta el diente no es lo correcto, por lo que se realizará de igual forma que la técnica anterior, alargar como si fuera una línea recta hasta el borde del diente.
+Con respecto a la técnica a implementar, se ha desarrollado correctamente. Pero la parte de buscar la distancia máxima desde el extremo del nervio hasta el diente no es la correcta, por lo que se realizará de igual forma que la técnica anterior, alargar como si fuera una línea recta hasta el borde del diente.
 
 Por otro lado, con respecto a dividir el modelo para poder subirlo a \emph{Google Colab} y a \emph{GitHub}, se ha encontrado una forma más sencilla. Dicho modo se basa en tener el modelo subido en \emph{Google Drive} y gracias al paquete \emph{gdown} descargarlo.
 
 Tras poder subirlo a \emph{Google Colab}, se ha corroborado que se puede utilizar el modelo obtenido en Gamma en los \emph{notebooks} de \emph{Google}.
 
-Por último, la aplicación en Gamma se ha lanzado también con \emph{ngrok}, de manera que, actualmente, se puede acceder a la aplicación a través de un enlace. Pese a ello, también se va a realizar la aplicación en \emph{Google Colab}, de modo que haya dos alternativas para poder usarla.
+Por último, la aplicación en Gamma se ha lanzado también con \emph{Ngrok}, de manera que, actualmente, se puede acceder a la aplicación a través de un enlace. Pese a ello, también se va a realizar la aplicación en \emph{Google Colab}, de modo que haya dos alternativas para poder usarla.
 
 Por tanto, las tareas a hacer para la semana que viene son:
 \begin{itemize}
@@ -196,6 +210,7 @@ Por tanto, las tareas a hacer para la semana que viene son:
     \item Implementar la aplicación en \emph{Google Colab}.
     \item Comentar las diversas celdas de los diferentes \emph{notebooks} para facilitar su comprensión. 
 \end{itemize}
+
 \subsection{Sprint 17 - 16/06/2022}
 Para esta semana se ha solucionado el problema de la última técnica implementada. También se ha actualizado la aplicación para que trabaje con dicha técnica.
 
@@ -208,10 +223,94 @@ Las próximas tareas a realizar son:
     \item Terminar de comentar todos los \emph{notebooks}.
     \item Retocar la aplicación, añadiendo manual de usuario y más descripciones y efectuando alguna pequeña mejora.
 \end{itemize}
+
+\subsection{Sprint 18 - 24/06/2022}
+Este fue el último \emph{sprint} del proyecto. En él se revisó la aplicación final y se revisó parte de la documentación que se llevaba hecha. Con respecto a la documentación de los diferentes \emph{notebooks} no se consiguió comentar todos los subidos a lo largo del proyecto a \emph{GitHub}.
+
+Por tanto, las últimas tareas a realizar son:
+\begin{itemize}
+    \item Terminar de comentar todos los \emph{notebooks}.
+    \item Terminar de escribir toda la documentación del proyecto.
+\end{itemize}
+
 \section{Estudio de viabilidad}
+En los siguientes apartados se procederá a estudiar, tanto la viabilidad económica como la viabilidad legal del proyecto.
 
 \subsection{Viabilidad económica}
+Para estimar la viabilidad económica se analizarán dos elementos importantes, primero el coste de mantener al personal de la aplicación y segundo el coste del hardware necesario para tener siempre activa la aplicación.
+\subsubsection{Coste del personal}
+Para llevar a cabo la aplicación y mantenerla a lo lago del tiempo se va a suponer que se contrata a un programador cuyo sueldo medio en España es de unos 29.800€ brutos al año, lo que supone unos 1.610€ netos al mes (valores obtenidos en Jobted\footnote{ Jobted: \url{https://www.jobted.es/salario/programador}}).
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Coste estimado por mes} & \numprint{1610}€ \\ \hline
+\textbf{Coste estimado año}     & \numprint{19320}€ \\ \hline
+\end{tabular}
+\captionof{table}{Costes estimados personal}
+\end{center}
+
+\subsubsection{Hardware}
+La aplicación puede usarse de dos formas distintas:
+\begin{itemize}
+    \item Gamma: accediendo al \emph{notebook} alojado en la máquina de la Universidad de Burgos.
+    \item Google Colab: accediendo al \emph{notebook} compartido de Colab.
+\end{itemize}
+
+Debido a las dos opciones que hay para usar la aplicación se podrían distinguir dos costes distintos.
+
+Por un lado tenemos \emph{Google Colab} donde se puede compartir \emph{notebooks} de forma gratuita a otros usuarios a través de un enlace que les da acceso. 
+
+Por el otro lado, tenemos el \emph{notebook} en Gamma, por lo que la máquina tiene que estar siempre activa para no dejar a los clientes sin servicio. Debido a ello, tendrá que encontrase la máquina siempre conectada a la red eléctrica.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Coste estimado por mes} & \numprint{100}€  \\ \hline
+\textbf{Coste estimado año}     & \numprint{1200}€ \\ \hline
+\end{tabular}
+\captionof{table}{Costes estimados hardware}
+\end{center}
+
+\subsubsection{Costes Totales}
+Tras analizar los costes del personal y los costes del hardware, los costes estimado al mes y al año son:
+\begin{center}
+\begin{tabular}{c|c|c|}
+\cline{2-3}
+                                              & \textbf{Mes} & \textbf{Año} \\ \hline
+\multicolumn{1}{|c|}{\textbf{Coste Personal}} & \numprint{1610}€        & \numprint{19320}€       \\ \hline
+\multicolumn{1}{|c|}{\textbf{Coste Hardware}} & \numprint{100}€         & \numprint{1200}€        \\ \hline
+\multicolumn{1}{|c|}{\textbf{Total}}          & \numprint{1710}€        & \numprint{20520}€       \\ \hline
+\end{tabular}
+\captionof{table}{Costes estimados totales}
+\end{center}
 
 \subsection{Viabilidad legal}
+Con respecto a la viabilidad legal, se han empleado bibliotecas de \emph{Python} que permiten su uso y comercialización gratuita. 
 
+El principal problema viene con las radiografías, ya que nos las ha prestado el odontólogo y por ello no se pueden subir con este proyecto para que puedan probarse. Esto podría suponer un problema, puesto que cualquier usuario que quiera comprobar como funciona la aplicación necesitará poseer alguna radiografía dental.
 
+Incluso para la gente que quiera replicar este proyecto, por su parte, deberá de tener un número razonable de radiografías para poder entrenar su modelo de manera correcta.
+
+Las bibliotecas de \emph{Python} utilizadas en la aplicación final junto con la licencia asociada a cada una de ellas se puede ver en la tabla \ref{licencias}.
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Biblioteca} & \textbf{Licencia} \\ \hline
+NumPY               & BSD               \\ \hline
+OpenCV              & BSD               \\ \hline
+Matplotlib          & PSF               \\ \hline
+Jupyter Widgets     & BSD               \\ \hline
+Detectron2          & Apache 2.0        \\ \hline
+SciPy               & BSD               \\ \hline
+PyTorch             & BSD               \\ \hline
+Scikit-Image        & BSD               \\ \hline
+gdown               & MIT               \\ \hline
+\end{tabular}
+\captionof{table}{Licencias Bibliotecas Python}
+\label{licencias}
+\end{center}
+
+Todas estas licencias, junto con la licencia BSD de \emph{Jupyter Notebook} permiten que la aplicación final pueda ser distribuida y comercializada sin ninguna limitación.
+
+Tras analizar todas las licencias, la licencia colocada al proyecto es GPL v3 que permite la comercialización del \emph{software} desarrollado, su modificación, distribución, realizar patentes y su uso de forma privada.
